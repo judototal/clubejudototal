@@ -1,0 +1,39 @@
+{% extends "../layouts/base.twig" %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="main">
+ {% for noticia in noticias %}
+  {% if noticia.estado == 'publicada' %}
+   {% if loop.first %}
+      <h1>{{noticia.titulo}}</h1></span>
+      {% if noticia.imagem.filename %}
+         <img src="/images/{{noticia.imagem.filename}}" style="max-width:100%">
+      {% endif %}
+          <p>
+            {{noticia.textoNoticia}}
+          </p>
+	  <br><span>{{noticia.publicadoEm}}<br>
+   {% endif %}
+  {% endif %}
+ {% endfor %}
+    </div>
+
+    <div class="side">
+      <h1>Mais notícias:</h1>
+ {% for noticia in noticias %}
+  {% if noticia.estado == 'publicada' %}
+   {% if not loop.first %}
+      <div class="news-small">
+        <img src="/images/{{noticia.imagem.filename}}" style="max-width:100%">
+        <span>{{noticia.publicadoEm}}<br> <br>
+        <a href="/noticia/{{noticia.slug}}">{{noticia.titulo}}</a></span>
+      </div>
+   {% endif %}
+  {% endif %}
+ {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

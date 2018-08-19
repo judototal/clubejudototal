@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>Clube Judo Total</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu'>
+<link rel='stylesheet' href='/css/news.css'>
+<link rel='stylesheet' href='/css/master.css'>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img class="header-logo" src="/img/alt.png"
+      alt="Judo Total. Adapta-se a ti.">
+  <a href="#"><img class="header-flag" src="/img/gb.png"></a>
+  <a href="#"><img class="header-flag" src="/img/pt.png"></a>
+</div>
+
+<!-- NAVIGATION BAR -->
+<div id="navbar">
+  <a href="home.htm" class="left">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Judo</button>
+    <div class="dropdown-content">
+      <a href="#">Link1</a>
+      <a href="#">Link2</a>
+      <a href="#">Link3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Clube</button>
+    <div class="dropdown-content">
+      <a href="#">Link1</a>
+      <a href="#">Link2</a>
+      <a href="#">Link3</a>
+    </div>
+  </div>
+  <a href="/noticias" class="left active">Notícias</a>
+  <a href="/calendario" class="left">Calendário</a>
+  <a href="/fotos" class="left">Fotos</a>
+  <a href="/links" class="left">Links</a>
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+</div>
+
+<!-- MAIN COLUMN -->
+<div class="content">
+{% block content %}{% endblock %}
+</div>
+
+<!--SPONSORS-->
+<div class="sponsors">
+  <img style="width: 13%; height: auto" src="/img/tori_sport.jpg" alt="Tori Sport">
+  <img style="width: 20%; height: auto" src="/img/Logo_CML.svg" alt="Câmara Municipal de Lisboa">
+</div>
+
+<!--FOOTER-->
+<div class="footer">
+  <img class="footer-logo" src="/img/boneco.svg">
+  <div class="footer-info">
+    <table>
+      <tr>
+        <td>{{localtreino.textoSeccao}}</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>{{contactos.textoSeccao}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script>
+// Execute myFunction when the user scrolls the page
+window.onscroll = function() {
+  myFunction()
+};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+</html>

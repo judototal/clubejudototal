@@ -1,0 +1,15 @@
+.list {
+  padding: 1em 2em;
+  line-height: 3em;
+}
+
+.list a {
+  color: black;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.list a:hover {
+  color: #cd171e;
+  text-decoration: none;
+}

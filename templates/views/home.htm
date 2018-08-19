@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>Clube Judo Total</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu'>
+<link href='https://fonts.googleapis.com/css?family=Waiting for the Sunrise' rel='stylesheet'>
+<link rel='stylesheet' href='home.css'>
+<link rel='stylesheet' href='master.css'>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img class="header-logo" src="images/alt.png"
+      alt="Judo Total. Adapta-se a ti.">
+  <a href="#"><img class="header-flag" src="images/gb.png"></a>
+  <a href="#"><img class="header-flag" src="images/pt.png"></a>
+</div>
+
+<!-- NAVIGATION BAR -->
+<div id="navbar">
+  <a href="home.htm" class="left active">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Judo</button>
+    <div class="dropdown-content">
+      <a href="#">Link1</a>
+      <a href="#">Link2</a>
+      <a href="#">Link3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Clube</button>
+    <div class="dropdown-content">
+      <a href="#">Link1</a>
+      <a href="#">Link2</a>
+      <a href="#">Link3</a>
+    </div>
+  </div>
+  <a href="#" class="left">Notícias</a>
+  <a href="#" class="left">Calendário</a>
+  <a href="#" class="left">Fotos</a>
+  <a href="links.htm" class="left">Links</a>
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+</div>
+
+<!-- MAIN COLUMN -->
+<div class="content">
+  <div class="row">
+    <div class="main">
+      <!-- News Grid -->
+      <div class="news-grid">
+        <a href="news.htm" class="cell1" style='background-image: url("images/declaracao.png")'>
+          <div id="main-cell" class="headline">Clube Judo Total reconhecido com o estatuto de ONGPD</div>
+        </a>
+        <a href="#" class="cell2" style='background-image: url("images/site.jpg")'>
+          <div id="second-cell" class="headline">Visite o novo site do Clube Judo Total</div>
+        </a>
+        <a href="#" class="cell2" style='background-image: url("images/magnos univ.jpg")'>
+          <div id="second-cell" class="headline">Magnos Nhanco sagrou-se vice-campeão nacional universitário</div>
+        </a>
+      </div>
+    <!-- Past events -->
+      <br>
+      <div class="events">
+        <div class="past-events">
+          <table>
+            <tr>
+              <th>Últimos eventos</th>
+            </tr>
+            <tr>
+              <td>9 Junho, 2018 (Odivelas)<br>
+              <a href="#">Campeonato Nacional Juvenis (13/14 anos)</a></td>
+            </tr>
+            <tr>
+              <td>10 Junho, 2018 (Odivelas)<br>
+              <a href="#">Campeonato Nacional Equipas Cadetes (15 a 17 anos)</a><br>
+              <a href="#">Campeonato Nacional Equipas Séniores</a></td>
+            </tr>
+            <tr>
+              <td>7 Julho, 2018<br>
+              <a href="#">Exames nacionais de graduação (a partir de 3º dan)</a>
+            </tr>
+            <tr>
+              <td>14 Julho, 2018 (Estádio 1º de Maio - Inatel)<br>
+              <a href="#">Exames associativos de graduação (1º e 2º dan)</a>
+            </tr>
+            <tr>
+              <td id="section-link"> <a href="#">Ver Fotos</a>
+            </td>
+            </tr>
+          </table>
+        </div>
+      <!-- Future events -->
+        <div class="future-events">
+          <table>
+            <tr>
+              <th>Próximos eventos</th>
+            </tr>
+            <tr>
+              <td>9 Junho, 2018 (Odivelas)<br>
+              <a href="#">Campeonato Nacional Juvenis (13/14 anos)</a></td>
+            </tr>
+            <tr>
+              <td>10 Junho, 2018 (Odivelas)<br>
+              <a href="#">Campeonato Nacional Equipas Cadetes (15 a 17 anos)</a><br>
+              <a href="#">Campeonato Nacional Equipas Séniores</a></td>
+            </tr>
+            <tr>
+              <td>7 Julho, 2018<br>
+              <a href="#">Exames nacionais de graduação (a partir de 3º dan)</a>
+            </tr>
+            <tr>
+              <td>14 Julho, 2018 (Estádio 1º de Maio - Inatel)<br>
+              <a href="#">Exames associativos de graduação (1º e 2º dan)</a>
+            </tr>
+            <tr>
+              <td id="section-link"> <a href="#">Ver Calendário</a>
+            </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  <!-- SIDEBAR -->
+    <div class="side">
+    <!-- Judoca of the Month -->
+      <div class="jm">
+        <h1>Judoca do mês:<br>
+          Junho 2018</h1>
+          <h2>Rafael Lopes</h2>
+          <img src="images/Rafael Lopes.jpg">
+          <ul>
+            <li>Atitude e empenho perfeitos</li>
+          </ul>
+        </div>
+      <!-- CJT results -->
+      <div class="results">
+        <h1>Resultados CJT 2018</h1>
+        <div id="btn-group">
+          <button class="btn open active-btn" onclick="results(1)"><img src="images/location.png"></button>
+          <button class="btn pt" onclick="results(2)"><img src="images/pt.png"></button>
+          <button class="btn world" onclick="results(3)"><img src="images/world.png"></button>
+        </div>
+        <h2 id="results-desc">Provas Zonais/Opens</h2>
+        <table>
+          <tr id="gold_row">
+            <td>Ouro</td>
+            <td id="ng">2</td>
+          </tr>
+          <tr id="silver_row">
+            <td>Prata</td>
+            <td id="ns">2</td>
+          </tr>
+          <tr id="bronze_row">
+            <td>Bronze</td>
+            <td id="nb">0</td>
+          </tr>
+          <tr>
+            <td>5º</td>
+            <td id="n5">0</td>
+          </tr>
+          <tr>
+            <td>7º</td>
+            <td id="n7">0</td>
+          </tr>
+        </table>
+      </div>
+      <!-- Something more -->
+        <div class="something">
+        </div>
+    </div>
+  </div>
+</div>
+
+<!--SPONSORS-->
+<div class="sponsors">
+  <img style="width: 13%; height: auto" src="images/tori_sport.jpg" alt="Tori Sport">
+  <img style="width: 20%; height: auto" src="images/Logo_CML.svg" alt="Câmara Municipal de Lisboa">
+</div>
+
+<!--FOOTER-->
+<div class="footer">
+  <img class="footer-logo" src="images/boneco.svg">
+  <div class="footer-info">
+    <table>
+      <tr>
+        <td id="table-right">Local de treino:</td>
+        <td>Pista Prof. Moniz Pereira,</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Rua João Amaral,</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Ameixoeira, Lisboa.</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td id="table-right">Telemóvel:</td>
+        <td>917 198 051</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>917 923 302</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="padding-bottom: 1em;">925 408 153</td>
+      </tr>
+      <tr>
+        <td id="table-right">Email:</td>
+        <td>clube@judototal.com</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script>
+// Execute myFunction when the user scrolls the page
+window.onscroll = function() {
+  myFunction()
+};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+function results(i) {
+  if (i == 1) {
+    document.getElementById('results-desc').innerHTML = "Provas Zonais/Opens"
+    document.getElementById('ng').innerHTML = "2"
+    document.getElementById('ns').innerHTML = "2"
+    document.getElementById('nb').innerHTML = "0"
+    document.getElementById('n5').innerHTML = "0"
+    document.getElementById('n7').innerHTML = "0"
+  }
+
+  else if (i == 2) {
+    document.getElementById('results-desc').innerHTML = "Provas Nacionais"
+    document.getElementById('ng').innerHTML = "1"
+    document.getElementById('ns').innerHTML = "2"
+    document.getElementById('nb').innerHTML = "1"
+    document.getElementById('n5').innerHTML = "0"
+    document.getElementById('n7').innerHTML = "0"
+  }
+
+  else if (i == 3) {
+    document.getElementById('results-desc').innerHTML = "Provas Internacionais"
+    document.getElementById('ng').innerHTML = "0"
+    document.getElementById('ns').innerHTML = "0"
+    document.getElementById('nb').innerHTML = "0"
+    document.getElementById('n5').innerHTML = "1"
+    document.getElementById('n7').innerHTML = "2"
+  }
+}
+
+var header = document.getElementById("btn-group");
+var btns = header.getElementsByClassName("btn");
+for (var j = 0; j < btns.length; j++) {
+btns[j].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active-btn");
+  current[0].className = current[0].className.replace(" active-btn", "");
+  this.className += " active-btn";
+});
+}
+</script>
+
+</body>
+</html>

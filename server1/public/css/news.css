@@ -1,0 +1,81 @@
+/* MAIN COLUMN AND SIDEBAR CONTAINER */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3em; /* Creates space between main content and footer */
+}
+
+/* MAIN COLUMN */
+.main {
+  flex: 74%; /* Set the width of the main content */
+  margin-left: 1%; /* The grid must not be too close from the left edge of the webpage and the sidebar */
+  padding: 0 1em;
+}
+
+.main span {
+  text-align: left;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.main span > h1 {
+  font-size: 2.5em;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.main p {
+  text-indent: 0.5em;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  padding: 0 1em 0 0.5em;
+  text-align: justify;
+}
+
+.main p::first-letter {
+  font-size: 300%;
+  color: #cd171e;
+}
+
+.side {
+  background-color: #dce0df;
+  flex: 24%; /* Set the width of the sidebar */
+  padding: 1em;
+  margin-right: 1%;
+}
+
+.side h1 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.7em;
+}
+
+.news-small {
+  display: flex;
+  padding: 1.5em 0;
+  border-bottom: solid 0.1em #cd171e;
+}
+
+.news-small img {
+  flex: 40%;
+  width: 40%;
+  height: 40%;
+  margin-right: 10%;
+}
+
+.news-small span {
+  flex: 50%;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.news-small span > a {
+  font-size: 1.3em;
+  text-decoration: none;
+  font-style: normal;
+  color: black;
+}
+
+.news-small a:hover {
+  color: #cd171e;
+}
