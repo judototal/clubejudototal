@@ -6,7 +6,7 @@ exports = module.exports = function (req, res) {
     var locals = res.locals;
 
     //Init locals
-    locals.section = 'noticias';
+    locals.section = 'eventos';
     locals.filters = {slug: req.params.slug};
 	
     locals.data = {
@@ -14,14 +14,14 @@ exports = module.exports = function (req, res) {
     };
 	locals.data.slug = locals.filters.slug;
 
-	var Noticias = keystone.list('Noticia');
+	var Eventos = keystone.list('Evento');
 	var Seccao = keystone.list('Seccao');
 
-	view.query('noticias', Noticias.model.find({estado:'publicada'}).sort('-publicadoEm').limit(6));
+	view.query('evento', Eventos.model.findOne(locals.filters));
 	view.query('contactos', Seccao.model.findOne({slug:'contactos'}));
 	view.query('localtreino', Seccao.model.findOne({slug:'local'}));
 
     //Renderiza o template
-    view.render('noticiadetalhe');
+    view.render('eventodetalhe');
 
 };

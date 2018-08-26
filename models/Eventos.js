@@ -37,7 +37,7 @@ Evento.add({
     type: Types.Relationship, 
     ref: 'Utilizador' 
   },
-	criadoEm: { 
+    criadoEm: { 
     type: Date, 
     default: Date.now },
   publicadoEm: Date,
@@ -50,10 +50,14 @@ Evento.add({
     type: Date, 
     default: Date.now },
   publicadoEm: Date,
-  textoEvento: { 
+  descricaoEvento: { 
     type: Types.Html, 
     wysiwyg: true, 
     height: 600 
+  },
+  localizacaoEvento: { 
+    type: String, 
+    required: false 
   }
 });
 

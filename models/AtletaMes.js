@@ -3,7 +3,7 @@ var Types = keystone.Field.Types;
 var path = require('path');
 
 // Criar uma lista de keystone para o Atleta do Mês
-var Atleta = new keystone.List('Atleta', {
+var AtletaMes = new keystone.List('AtletaMes', {
   map: {name:'nome'}, 	
   autokey: { path: 'slug', from: 'nome', unique: true },
   defaultSort: '-criadoEm',
@@ -14,18 +14,18 @@ var atletaImgStorage = new keystone.Storage({
   adapter: keystone.Storage.Adapters.FS,
   fs: {
      // required; path where the files should be stored
-    path: keystone.expandPath('server/public/img'),
+    path: keystone.expandPath('public/images'),
     generateFilename: function (file, index) {
       return file.originalname;
     },
     whenExists: 'error',
      // path where files will be served
-    publicPath: '/public/img',
+    publicPath: '/public/images',
   },
 });
 
 // Nesta estrutura adicionamos os campos 
-Atleta.add({
+AtletaMes.add({
   nome: { 
     type: String, 
     required: true },
@@ -54,5 +54,5 @@ Atleta.add({
 });
 
 // Setting the default order of the columns on the admin tab
-Atleta.defaultColumns = 'nome, estado|20%, autor, publicadoEm|15%';
-Atleta.register();
+AtletaMes.defaultColumns = 'nome, estado|20%, autor, publicadoEm|15%';
+AtletaMes.register();

@@ -13,15 +13,21 @@ exports = module.exports = function (req, res) {
       news: []
     };
 	locals.data.slug = locals.filters.slug;
+	locals.data.dataactual = new Date();
 
 	var Noticias = keystone.list('Noticia');
+	var Eventos = keystone.list('Evento');
+	var AtletaMes = keystone.list('AtletaMes');
 	var Seccao = keystone.list('Seccao');
 
-	view.query('noticias', Noticias.model.find({estado:'publicada'}).sort('-publicadoEm').limit(6));
+	view.query('noticias', Noticias.model.find().sort('-publicadoEm').limit(3));
+	view.query('eventos', Eventos.model.find().sort('-publicadoEm').limit(10));
+	view.query('atletames', AtletaMes.model.find().sort('-publicadoEm').limit(1));
+	view.query('resultados', Seccao.model.findOne({slug:'resultados'}));
 	view.query('contactos', Seccao.model.findOne({slug:'contactos'}));
 	view.query('localtreino', Seccao.model.findOne({slug:'local'}));
 
     //Renderiza o template
-    view.render('noticiadetalhe');
+    view.render('homepage');
 
 };

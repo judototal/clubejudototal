@@ -14,7 +14,7 @@
           <p>
             {{noticia.textoNoticia}}
           </p>
-	  <br><span>{{noticia.publicadoEm}}<br>
+	  <br><span>{{noticia._.publicadoEm.format('YYYY-MM-DD H:m')}}<br>
    {% endif %}
   {% endif %}
  {% endfor %}
@@ -27,7 +27,7 @@
    {% if data.slug != noticia.slug %}
       <div class="news-small">
         <img src="/images/{{noticia.imagem.filename}}" style="max-width:100%">
-        <span>{{noticia.publicadoEm}}<br> <br>
+        <span>{{noticia._.publicadoEm.format('YYYY-MM-DD H:m')}}<br> <br>
         <a href="{{noticia.slug}}">{{noticia.titulo}}</a></span>
       </div>
    {% endif %}

@@ -1,0 +1,39 @@
+{% extends "../layouts/base.twig" %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="main">
+ {% for atleta in atletames %}
+  {% if atleta.estado == 'publicada' %}
+   {% if loop.first %}
+      <h1>{{atleta.nome}}</h1></span>
+      {% if atleta.imagem.filename %}
+         <img src="/images/{{atleta.imagem.filename}}" style="max-width:100%">
+      {% endif %}
+          <p>
+            {{atleta.textoDescritivo}}
+          </p>
+	  <br><span>{{atleta._.publicadoEm.format('YYYY-MM-DD H:m')}}<br>
+   {% endif %}
+  {% endif %}
+ {% endfor %}
+    </div>
+
+    <div class="side">
+      <h1>Meses anteriores:</h1>
+ {% for atleta in atletames %}
+  {% if atleta.estado == 'publicada' %}
+   {% if not loop.first %}
+      <div class="news-small">
+        <img src="/images/{{atleta.imagem.filename}}" style="max-width:100%">
+        <span>{{atleta._.publicadoEm.format('YYYY-MM-DD H:m')}}<br> <br>
+        <a href="/atletames/{{atleta.slug}}">{{atleta.nome}}</a></span>
+      </div>
+   {% endif %}
+  {% endif %}
+ {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "../layouts/base.twig" %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="main">
+      <!-- News Grid -->
+      <div class="news-grid">
+        <a href="/noticias/{{noticia[0].slug}}" class="cell1" style='background-image: url("/images/{{noticias[0].imagem.filename}}")'>
+          <div id="main-cell" class="headline">{{noticias[0].titulo}}</div>
+        </a>
+	<a href="/noticias/{{noticia[1].slug}}" class="cell2" style='background-image: url("/images/{{noticias[1].imagem.filename}}")'>
+          <div id="main-cell" class="headline">{{noticias[1].titulo}}</div>
+        </a>
+	<a href="/noticias/{{noticia[2].slug}}" class="cell2" style='background-image: url("/images/{{noticias[2].imagem.filename}}")'>
+          <div id="main-cell" class="headline">{{noticias[2].titulo}}</div>
+        </a>
+      </div>
+    <!-- Past events -->
+      <br>
+      <div class="events">
+        <div class="past-events">
+          <table>
+            <tr>
+              <th>Últimos eventos</th>
+            </tr>
+	    {% for evento in eventos %}
+	       {% if data.dataactual>=evento.dataEvento %}
+	       	   <tr>
+			<td>{{evento._.dataEvento.format('DD/MM/YYYY H:m')}}, {{evento.localizacaoEvento}}<br>
+              	        <a href="/evento/{{evento.slug}}">{{evento.titulo}}</a></td>
+            	   </tr>
+	       {% endif %}
+	    {% endfor %}
+          </table>
+        </div>
+      <!-- Future events -->
+        <div class="future-events">
+          <table>
+            <tr>
+              <th>Próximos eventos</th>
+            </tr>
+	    {% for evento in eventos %}
+	       {% if data.dataactual < evento.dataEvento %}
+	       	   <tr>
+			<td>{{evento._.dataEvento.format('DD/MM/YYYY H:m')}}, {{evento.localizacaoEvento}}<br>
+              	        <a href="/evento/{{evento.slug}}">{{evento.titulo}}</a></td>
+            	   </tr>
+	       {% endif %}
+	    {% endfor %}	    
+            <tr>
+              <td id="section-link"> <a href="/eventos">Ver Calendário</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+        <!-- SIDEBAR -->
+    <div class="side">
+    <!-- Judoca of the Month -->
+      <div class="jm">
+        <h1>Judoca do mês:</h1>
+          <h2>{{atletames[0].nome}}</h2>
+          <img src="/images/{{atletames[0].imagem.filename}}">
+          <ul>
+            <li>{{atletames[0].textoDescritivo}}</li>
+          </ul>
+        </div>
+      <!-- CJT results -->
+      <div class="results">
+      	   {{resultados.textoSeccao}}
+      </div>
+      <!-- Something more -->
+        <div class="something">
+    </div>
+  </div>
+
+
+
+{% endblock %}

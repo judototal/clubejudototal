@@ -1,0 +1,48 @@
+{% extends "../layouts/base.twig" %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="main">
+ {% for evento in eventos %}
+  {% if evento.estado == 'publicada' %}
+   {% if data.dataactual < evento.dataEvento %}
+      <h1>{{evento.titulo}}</h1></span>
+      {% if evento.imagem.filename %}
+         <img src="/images/{{evento.imagem.filename}}" style="max-width:100%">
+      {% endif %}
+      	  <p>Local do Evento: {{evento.localizacaoEvento}}</p>
+	  <p>Data do Evento: {{evento._.dataEvento.format('YYYY-MM-DD')}}</p>
+	  <p>Hora do Evento: {{evento._.dataEvento.format('H:m')}} horas</p>
+	  <p>Local do Evento: {{evento.localizacaoEvento}}</p>
+	  <p/>	   
+	  <p>
+            {{evento.descricaoEvento}}
+          </p>
+	  <br><span>{{evento._.publicadoEm.format('YYYY-MM-DD H:m')}}<br>
+	  <hr>
+   {% endif %}
+  {% endif %}
+ {% endfor %}
+    </div>
+
+    <div class="side">
+      <h1>Eventos Passados:</h1>
+ {% for evento in eventos %}
+  {% if evento.estado == 'publicada' %}
+   {% if data.dataactual >= evento.dataEvento %}
+      <div class="news-small">
+      {% if evento.imagem.filename %}
+         <img src="/images/{{evento.imagem.filename}}" style="max-width:100%">
+      {% endif %}
+        <span>{{evento._.dataEvento.format('YYYY-MM-DD H:m')}}<br>
+	<span>{{evento.localizacaoEvento}}</span><br>
+        <a href="/evento/{{evento.slug}}">{{evento.titulo}}</a></span>
+      </div>
+   {% endif %}
+  {% endif %}
+ {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
