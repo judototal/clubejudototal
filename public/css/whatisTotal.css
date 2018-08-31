@@ -1,0 +1,12 @@
+.text {
+  padding: 1em 2em;
+  text-align: justify;
+  font-size: 1.1em;
+  margin-right: 5em;
+  line-height: 2em;
+}
+
+.text p::first-letter {
+  font-size: 300%;
+  color: #cd171e;
+}

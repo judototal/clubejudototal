@@ -1,0 +1,9 @@
+.list {
+  padding: 1em 2em;
+  line-height: 2em;
+}
+
+.list ul {
+  list-style-type: none;
+  list-style-image: url('images/belt_bullet.png');
+}

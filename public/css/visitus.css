@@ -1,0 +1,18 @@
+.info {
+  padding: 1em 2em;
+  margin-right: 4em;
+  line-height: 3em;
+}
+
+.info h2 {
+  text-indent: 0.5em;
+}
+
+.info h3 {
+  text-indent: 1em;
+}
+
+.info ul {
+  list-style-type: none;
+  line-height: 1.5em;
+}

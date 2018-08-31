@@ -26,6 +26,7 @@ exports = module.exports = function (req, res) {
 	view.query('resultados', Seccao.model.findOne({slug:'resultados'}));
 	view.query('contactos', Seccao.model.findOne({slug:'contactos'}));
 	view.query('localtreino', Seccao.model.findOne({slug:'local'}));
+	view.query('calltoaction', Seccao.model.findOne({slug:'call-to-action'}));
 
     //Renderiza o template
     view.render('homepage');

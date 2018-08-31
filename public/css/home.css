@@ -167,20 +167,32 @@
   padding: 0.5em 0.8em; /* Enlarges table's cells with CJT results */
 }
 
-.something {
-  background-color: #dce0df;
-  height: 15em;
+.counters {
+  border: solid 0.1em #231f20;
+  background-color: rgba(35,31,32,0.8);
+  color: white;
+  margin-bottom: 1em;
+  padding: 1em;
+  font-size: 1em;
+}
+
+#first-letter {
+  font-family: 'Rock Salt';
+  font-size: 1.5em;
+  color: #cd171e;
 }
 
 .jm {
-  background-color: #dce0df;
+  border: solid 0.1em #dce0df;
+  background-color: rgba(220,224,223,0.2);
   padding: 0.5em;
   margin-bottom: 1em;
 }
 
 .results {
-  background-color: #dce0df;
-  padding: 0.5em;
+  border: solid 0.1em #dce0df;
+  background-color: rgba(220,224,223,0.2);
+  padding: 0.7em;
   margin-bottom: 1em;
 }
 

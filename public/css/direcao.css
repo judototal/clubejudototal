@@ -1,0 +1,16 @@
+.list {
+  padding: 1em 2em;
+  line-height: 2em;
+}
+
+.list h2 {
+  text-indent: 0.5em;
+}
+
+.list h3 {
+  text-indent: 1em;
+}
+
+.list ul {
+  list-style-type: none;
+}

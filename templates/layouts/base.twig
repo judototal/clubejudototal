@@ -7,79 +7,87 @@
 <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu'>
 <link rel='stylesheet' href='/css/master.css'>
+<link rel='stylesheet' href='/css/links.css'>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Waiting for the Sunrise' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Rock Salt' rel='stylesheet'>
 </head>
 <body>
 
+
 <!-- HEADER -->
 <div class="header">
-  <img class="header-logo" src="/img/alt.png"
-       alt="Judo Total. Adapta-se a ti.">
-  <!--
-  <a href="#"><img class="header-flag" src="/img/gb.png"></a>
-  <a href="#"><img class="header-flag" src="/img/pt.png"></a>
-  -->
+  <img class="header-logo" src="/images/alt.png"
+      alt="Judo Total. Adapta-se a ti.">
 </div>
 
 <!-- NAVIGATION BAR -->
 <div id="navbar">
-  <a href="/" class="left">Home</a>
+  <a href="/" class="left active">Home</a>
   <div class="dropdown">
     <button class="dropbtn">Judo</button>
     <div class="dropdown-content">
-      <a href="#">Link1</a>
-      <a href="#">Link2</a>
-      <a href="#">Link3</a>
+      <a href="/seccao/tecnicas-de-judo">Técnicas de Judo</a>
+      <a href="#">Go Kyo</a>
+      <a href="#">Katas</a>
     </div>
   </div>
   <div class="dropdown">
     <button class="dropbtn">Clube</button>
     <div class="dropdown-content">
-      <a href="#">Link1</a>
-      <a href="#">Link2</a>
-      <a href="#">Link3</a>
+      <a href="/seccao/porque-judo-total">Porquê 'Judo Total'?</a>
+      <a href="/seccao/orgaos-sociais">Órgãos Sociais</a>
+      <a href="/seccao/treinadores-e-cintos-negros">Treinadores e Cintos negros</a>
+      <a href="/seccao/biblioteca">Biblioteca</a>
     </div>
   </div>
-  <a href="/noticias" class="left active">Notícias</a>
-  <a href="/eventos" class="left">Calendário</a>
-  <a href="/fotos" class="left">Fotos</a>
+  <a href="/seccao/visite-nos" class="left">Visite-nos</a>
+  <div class="dropdown">
+    <button class="dropbtn">Eventos</button>
+    <div class="dropdown-content">
+      <a href="/eventos">Calendário</a>
+      <a href="/fotos">Fotos</a>
+    </div>
+  </div>
+  <a href="/noticias" class="left">Notícias</a>
+  <a href="/donativos" class="left">Apoie o CJT</a>
   <a href="/seccao/links" class="left">Links</a>
   <a href="https://www.facebook.com/ClubeJudoTotal"><i class="fa fa-facebook-official"></i></a>
 </div>
+
 
 <!-- MAIN COLUMN -->
 <div class="content">
 {% block content %}{% endblock %}
 </div>
 
+
 <!--SPONSORS-->
 <div class="sponsors">
-  <img style="width: 13%; height: auto" src="/img/tori_sport.jpg" alt="Tori Sport">
-  <img style="width: 20%; height: auto" src="/img/Logo_CML.svg" alt="Câmara Municipal de Lisboa">
+  <img style="width: 20%; height: auto" src="images/Logo_CML.svg" alt="Câmara Municipal de Lisboa">
+  <img style="width: 13%; height: auto" src="images/tori_sport.jpg" alt="Tori Sport">
 </div>
 
 <!--FOOTER-->
 <div class="footer">
-  <img class="footer-logo" src="/img/boneco.svg">
+  <img class="footer-logo" src="images/boneco.svg">
   <div class="footer-info">
-    <table>
+    <table style="width:100%; margin-top:10px;">
       <tr>
-        <td>{{localtreino.textoSeccao}}</td>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td>{{contactos.textoSeccao}}</td>
+         <td style="width:20%">{{localtreino.textoSeccao}}</td>
+	 <td style="width:20%"></td>
+	 <td style="width:20%"></td>
+	 <td style="width:20%"></td>
+         <td style="width:20%">{{contactos.textoSeccao}}</td>
       </tr>
     </table>
   </div>
 </div>
 
 <script>
-// Execute myFunction when the user scrolls the page
+// Execute menu_scroll when the user scrolls the page
 window.onscroll = function() {
-  myFunction()
+  menu_scroll()
 };
 
 // Get the navbar
@@ -89,13 +97,54 @@ var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
+function menu_scroll() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
-  } else {
+  }
+  else {
     navbar.classList.remove("sticky");
   }
 }
+
+function results(i) {
+  if (i == 1) {
+    document.getElementById('results-desc').innerHTML = "Provas Zonais/Opens"
+    document.getElementById('ng').innerHTML = "2"
+    document.getElementById('ns').innerHTML = "2"
+    document.getElementById('nb').innerHTML = "0"
+    document.getElementById('n5').innerHTML = "0"
+    document.getElementById('n7').innerHTML = "0"
+  }
+
+  else if (i == 2) {
+    document.getElementById('results-desc').innerHTML = "Provas Nacionais"
+    document.getElementById('ng').innerHTML = "1"
+    document.getElementById('ns').innerHTML = "2"
+    document.getElementById('nb').innerHTML = "1"
+    document.getElementById('n5').innerHTML = "0"
+    document.getElementById('n7').innerHTML = "0"
+  }
+
+  else if (i == 3) {
+    document.getElementById('results-desc').innerHTML = "Provas Internacionais"
+    document.getElementById('ng').innerHTML = "0"
+    document.getElementById('ns').innerHTML = "0"
+    document.getElementById('nb').innerHTML = "0"
+    document.getElementById('n5').innerHTML = "1"
+    document.getElementById('n7').innerHTML = "2"
+  }
+}
+
+var header = document.getElementById("btn-group");
+var btns = header.getElementsByClassName("btn");
+for (var j = 0; j < btns.length; j++) {
+btns[j].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active-btn");
+  current[0].className = current[0].className.replace(" active-btn", "");
+  this.className += " active-btn";
+});
+}
 </script>
+
 </body>
 </html>
