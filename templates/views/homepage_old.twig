@@ -2,6 +2,8 @@
 
 {% block content %}
   <link rel='stylesheet' href='/css/home.css'>
+<!-- MAIN COLUMN -->
+<div class="content">
   <div class="row">
     <div class="main">
       <!-- News Grid -->
@@ -32,6 +34,10 @@
             	   </tr>
 	       {% endif %}
 	    {% endfor %}
+            <tr>
+              <td id="section-link"> <a href="/fotos">Ver Fotos</a>
+            </td>
+            </tr>
           </table>
         </div>
       <!-- Future events -->
@@ -49,16 +55,22 @@
 	       {% endif %}
 	    {% endfor %}	    
             <tr>
-              <td id="section-link"> <a href="/eventos">Ver Calendário</a></td>
+              <td id="section-link"> <a href="/eventos">Ver Calendário</a>
+            </td>
             </tr>
           </table>
         </div>
       </div>
-        <!-- SIDEBAR -->
+    </div>
+  <!-- SIDEBAR -->
     <div class="side">
-    <!-- Judoca of the Month -->
+      <!-- Join Us -->
+      <div class="counters">
+      	   {{calltoaction.textoSeccao}}
+      </div>
+      <!-- Judoca of the Month -->
       <div class="jm">
-        <h1>Judoca do mês:</h1>
+	  <h1>Judoca do mês:</h1>
           <h2>{{atletames[0].nome}}</h2>
           <img src="/images/{{atletames[0].imagem.filename}}">
           <ul>
@@ -69,11 +81,7 @@
       <div class="results">
       	   {{resultados.textoSeccao}}
       </div>
-      <!-- Something more -->
-        <div class="something">
     </div>
   </div>
-
-
-
+</div>    
 {% endblock %}

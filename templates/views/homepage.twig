@@ -2,26 +2,26 @@
 
 {% block content %}
   <link rel='stylesheet' href='/css/home.css'>
-<!-- MAIN COLUMN -->
-<div class="content">
-  <div class="row">
-    <div class="main">
-      <!-- News Grid -->
+   <div class="row">
+    <div class="col-lg-9">
+      <div class="d-flex">
       <div class="news-grid">
-        <a href="/noticia/{{noticias[0].slug}}" class="cell1" style='background-image: url("/images/{{noticias[0].imagem.filename}}")'>
+        <a href="/noticia/{{noticias[0].slug}}" class="cell1">
+          <img src="/images/{{noticias[0].imagem.filename}}">
           <div id="main-cell" class="headline">{{noticias[0].titulo}}</div>
         </a>
-	<a href="/noticia/{{noticias[1].slug}}" class="cell2" style='background-image: url("/images/{{noticias[1].imagem.filename}}")'>
-          <div id="main-cell" class="headline">{{noticias[1].titulo}}</div>
+        <a href="/noticia/{{noticias[1].slug}}" class="cell2">
+          <img src="/images/{{noticias[1].imagem.filename}}">
+          <div id="second-cell" class="headline">{{noticias[1].titulo}}</div>
         </a>
-	<a href="/noticia/{{noticias[2].slug}}" class="cell2" style='background-image: url("/images/{{noticias[2].imagem.filename}}")'>
-          <div id="main-cell" class="headline">{{noticias[2].titulo}}</div>
+        <a href="/noticia/{{noticias[2].slug}}" class="cell2">
+          <img src="/images/{{noticias[2].imagem.filename}}">
+          <div id="second-cell" class="headline">{{noticias[2].titulo}}</div>
         </a>
       </div>
-    <!-- Past events -->
-      <br>
-      <div class="events">
-        <div class="past-events">
+    </div>
+      <div class="d-flex flex-row flex-wrap events">
+        <div class="past-events flex-fill">
           <table>
             <tr>
               <th>Últimos eventos</th>
@@ -41,12 +41,12 @@
           </table>
         </div>
       <!-- Future events -->
-        <div class="future-events">
+        <div class="future-events flex-fill">
           <table>
             <tr>
               <th>Próximos eventos</th>
             </tr>
-	    {% for evento in eventos %}
+            {% for evento in eventos %}
 	       {% if data.dataactual < evento.dataEvento %}
 	       	   <tr>
 			<td>{{evento._.dataEvento.format('DD/MM/YYYY H:m')}}, {{evento.localizacaoEvento}}<br>
@@ -62,26 +62,21 @@
         </div>
       </div>
     </div>
-  <!-- SIDEBAR -->
-    <div class="side">
-      <!-- Join Us -->
-      <div class="counters">
-      	   {{calltoaction.textoSeccao}}
+    <div class="col-lg-3">
+      <div class="about-us">
+        {{calltoaction.textoSeccao}}
       </div>
-      <!-- Judoca of the Month -->
       <div class="jm">
-	  <h1>Judoca do mês:</h1>
-          <h2>{{atletames[0].nome}}</h2>
-          <img src="/images/{{atletames[0].imagem.filename}}">
-          <ul>
-            <li>{{atletames[0].textoDescritivo}}</li>
-          </ul>
-        </div>
-      <!-- CJT results -->
+        <h3>Judoca do mês:</h3>
+        <h5>{{atletames[0].nome}}</h5>
+        <img src="images/{{atletames[0].imagem.filename}}">
+        <ul>
+          <li>{{atletames[0].textoDescritivo}}</li>
+        </ul>
+      </div>
       <div class="results">
-      	   {{resultados.textoSeccao}}
+         {{resultados.textoSeccao}}
       </div>
     </div>
   </div>
-</div>    
 {% endblock %}

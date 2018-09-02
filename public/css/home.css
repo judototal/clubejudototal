@@ -1,55 +1,49 @@
-/* MAIN COLUMN AND SIDEBAR CONTAINER */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 3em; /* Creates space between main content and footer */
-}
+/* MAIN CONTENT */
 
-/* MAIN COLUMN */
-.main {
-  flex: 74%; /* Set the width of the main content */
-  margin-left: 1%; /* The grid must not be too close from the left edge of the webpage and the sidebar */
-  padding-right: 1.5em;
-}
-
-/* Style of the news grid */
+/* Properties of the news-grid */
 .news-grid {
   display: grid;
   grid-template-rows: auto auto; /* Rows have the same height */
-  height: 50%;
+  height: 50%; /* It occupies half the homepage */
   grid-template-columns: 65% 35%;
-  grid-gap: 0.5em;
-  margin-bottom: 1.5em; /* Creates space between the news grid and the events */
+  grid-gap: 0.5em; /* Space between grid items */
+  margin-bottom: 2em; /* Creates space between the news grid and the events */
 }
 
-.news-grid > a {
-  background-repeat: no-repeat;
-  background-size: cover; /* The image fills the whole grid cell */
-  color: white;
-}
-
-.news-grid > a:hover {
-  background-repeat: no-repeat;
-  background-size: cover; /* The image fills the whole grid cell */
-  color: #cd171e;
-}
-
+/* Properties of the grid items */
 .cell1 {
-  display: block;
   position: relative;
   grid-row: 1 / span 2;
 }
 
 .cell2 {
-  display: block;
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
+.cell1 img, .cell2 img  {
+  position: relative;
+  width: 100%; /* The image occupies the entire area of the grid item */
+  height: 100%;
+  object-fit: cover; /* It keeps the image's aspect ratio */
+}
+
+/* Properties of the headlines */
+.news-grid > a {
+  color: white;
+}
+
+.news-grid > a:hover {
+  color: #cd171e;
+}
+
+/* It sets the black transparent box behind the headlines and text properties */
 .headline {
   position: absolute;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
-  max-width: 100%;
+  width: 100%;
   text-shadow: 2px 2px black;
   font-variant: small-caps;
 }
@@ -64,27 +58,28 @@
   font-size: 1.5em;
 }
 
-/* Style of the events */
-.events {
-  display: flex;
-  flex-wrap: wrap;
+/* All news are piled when the screen becomes smaller */
+@media (max-width: 990px) {
+  .news-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+  }
 }
 
-/* Past events table */
 .past-events, .future-events {
-  flex: 50%; /* Set the width of past and future events */
+  margin-bottom: 3em;
 }
 
+/* Tables with past and future events */
 .events table {
   text-align: left;
   border-left: 0.3em solid #cd171e;
   margin-left: 2em;
-  padding: 0 1em; /* Space between borders and the text */
 }
 
 .events th {
-  font-weight: bold;
-  font-size: 1.7em;
+  font-size: 1.75em;
+  padding-left: 0.5em; /* Separates table header from its left border */
 }
 
 .events td {
@@ -93,18 +88,17 @@
   text-indent: 0.5em; /* The date of an event is indented */
   font-weight: bold;
   color: #888;
-  padding-top: 1.5em; /* Creates space between events */
+  padding: 1.5em 0 0 1em; /* Creates space around events */
 }
 
 .events a {
   color: black;
-  font-size: 1em;
-  font-weight: normal;
+  font-weight: normal; /* In contrast with dates, links are not bold */
   text-decoration: none; /* Remove underline */
 }
 
 .events a:hover {
-  color: #cd171e; /* Red text color */
+  color: #cd171e;
 }
 
 #section-link {
@@ -114,34 +108,63 @@
 }
 
 /* SIDEBAR */
-.side {
-  flex: 24%; /* Set the width of the sidebar */
-  margin-right: 1%;
-}
 
-.side h1 {
+/* It sets the boxes for Judoca of the month and CJT results */
+.jm, .results {
+  background-color: rgba(220, 224, 223, 0.2);
+  border: solid 0.1em #dce0df;
+  margin-bottom: 1em;
+  padding: 1em;
   text-align: center;
-  font-weight: bold;
-  font-size: 1.7em;
 }
 
-.side h2 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2em;
+/* Judoca of the month */
+
+.jm h3 {
+  padding-bottom: 0.25em;
 }
 
-.side img {
-  width: 50%;
-  /* Centers the image relatively to the sidebar */
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
+.jm img {
+  max-width: 11.5em;
+  max-height: 20em;
+  padding-bottom: 0.75em;
 }
 
-.side ul {
-  line-height: 1.5em;
-  font-size: 1em;
+.jm ul {
+  margin: 0;
+  text-align: left;
+}
+
+/* CJT results */
+
+.results h3, .results h5 {
+  padding-bottom: 0.25em;
+}
+
+.btn-group {
+  padding-bottom: 1em;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevents double borders */
+}
+
+.btn {
+  background-color: transparent;
+  border: solid 0.1em #cd171e;
+}
+
+.btn img {
+  width: 2em;
+}
+
+.btn:focus {
+  outline: none; /* It removes the blue box around button after click */
+  box-shadow: none;
+}
+
+.active-btn, .btn:hover {
+  background-color: #231f20;
 }
 
 #gold_row {
@@ -156,84 +179,35 @@
   background-color: #cd7f32;
 }
 
-.side table {
+.results table {
   border-collapse: collapse;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
+  margin: 0 auto;
 }
 
-.side td {
-  padding: 0.5em 0.8em; /* Enlarges table's cells with CJT results */
+.results td {
+  padding: 0.5em 0.75em; /* Enlarges table's cells with CJT results */
 }
 
-.counters {
-  border: solid 0.1em #231f20;
+/* CJT achievements unlocked */
+
+.about-us {
   background-color: rgba(35,31,32,0.8);
+  border: solid 0.1em #231f20;
   color: white;
   margin-bottom: 1em;
-  padding: 1em;
+  padding: 1em 1em 0 1em;
   font-size: 1em;
+  line-height: 2.75em;
 }
 
-#first-letter {
+#first-letter-1 {
   font-family: 'Rock Salt';
-  font-size: 1.5em;
+  font-size: 1.4em;
   color: #cd171e;
 }
 
-.jm {
-  border: solid 0.1em #dce0df;
-  background-color: rgba(220,224,223,0.2);
-  padding: 0.5em;
-  margin-bottom: 1em;
-}
-
-.results {
-  border: solid 0.1em #dce0df;
-  background-color: rgba(220,224,223,0.2);
-  padding: 0.7em;
-  margin-bottom: 1em;
-}
-
-.btn {
-  background-color: transparent;
-  border-style: solid;
-  border-color: #cd171e;
-  cursor: pointer; /* Pointer/hand icon */
-  float: left;
-  width: 33.3%;
-  height: 4em;
-}
-
-.btn img {
-  float: left;
-  width: 30%;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.active-btn, .btn:hover {
-  background-color: #231f20;
-}
-
-/* Clear floats (clearfix hack) */
-#btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.open {
-  border-width: 0.2em 0.1em 0.2em 0.2em;
-}
-
-.pt {
-  border-width: 0.2em 0.1em;
-}
-
-.world {
-  border-width: 0.2em 0.2em 0.2em 0.1em;
+#first-letter-2 {
+  font-family: 'Rock Salt';
+  font-size: 1.4em;
+  color: white;
 }
