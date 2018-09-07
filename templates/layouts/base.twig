@@ -10,6 +10,7 @@
   <link href='https://fonts.googleapis.com/css?family=Rock Salt' rel='stylesheet'>
   <link rel='stylesheet' href='/css/master.css'>
   <link rel='stylesheet' href='/css/home.css'>
+  <link rel='stylesheet' href='/css/links.css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -17,7 +18,7 @@
 <body>
 
 <div class="container">
-  <img class="header" src="images/alt.png" alt="Clube Judo Total. Adapta-se a ti.">
+  <img class="header" src="/images/alt.png" alt="Clube Judo Total. Adapta-se a ti.">
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-custom sticky-top" >
@@ -83,14 +84,14 @@
 </div>
     <!--SPONSORS-->
     <div class="d-flex justify-content-center align-items-baseline sponsors">
-      <img style="width: 16em; height: auto" src="images/Logo_CML.svg" alt="Câmara Municipal de Lisboa">
-      <img style="width: 11em; height: auto" src="images/tori_sport.jpg" alt="Tori Sport">
+      <img style="width: 16em; height: auto" src="/images/Logo_CML.svg" alt="Câmara Municipal de Lisboa">
+      <img style="width: 11em; height: auto" src="/images/tori_sport.jpg" alt="Tori Sport">
     </div>
   </div>
 </div>
 
 <div class="footer">
-  <img class="footer-logo" src="images/boneco.svg">
+  <img class="footer-logo" src="/images/boneco.svg">
   <div class="row">
     <div class="col-lg-4 d-flex footer-info">
       <table>
@@ -113,33 +114,27 @@
 
 function results(i) {
   if (i == 1) {
-    document.getElementById('results-desc').innerHTML = "Provas Zonais/Opens"
-    document.getElementById('ng').innerHTML = "2"
-    document.getElementById('ns').innerHTML = "2"
-    document.getElementById('nb').innerHTML = "0"
-    document.getElementById('n5').innerHTML = "0"
-    document.getElementById('n7').innerHTML = "0"
+    document.getElementById('provas-zonais').style.display='block';
+    document.getElementById('provas-nacionais').style.display='none';
+    document.getElementById('provas-internacionais').style.display='none';
   }
 
   else if (i == 2) {
-    document.getElementById('results-desc').innerHTML = "Provas Nacionais"
-    document.getElementById('ng').innerHTML = "1"
-    document.getElementById('ns').innerHTML = "2"
-    document.getElementById('nb').innerHTML = "1"
-    document.getElementById('n5').innerHTML = "0"
-    document.getElementById('n7').innerHTML = "0"
+    document.getElementById('provas-zonais').style.display='none';
+    document.getElementById('provas-nacionais').style.display='block';
+    document.getElementById('provas-internacionais').style.display='none';
   }
 
   else if (i == 3) {
-    document.getElementById('results-desc').innerHTML = "Provas Internacionais"
-    document.getElementById('ng').innerHTML = "0"
-    document.getElementById('ns').innerHTML = "0"
-    document.getElementById('nb').innerHTML = "0"
-    document.getElementById('n5').innerHTML = "1"
-    document.getElementById('n7').innerHTML = "2"
+    document.getElementById('provas-zonais').style.display='none';
+    document.getElementById('provas-nacionais').style.display='none';
+    document.getElementById('provas-internacionais').style.display='block';
   }
 }
 
+document.getElementById('provas-zonais').style.display='block';
+document.getElementById('provas-nacionais').style.display='none';
+document.getElementById('provas-internacionais').style.display='none';
 var header = document.getElementById("btn-group");
 var btns = header.getElementsByClassName("btn");
 for (var j = 0; j < btns.length; j++) {
@@ -147,7 +142,8 @@ btns[j].addEventListener("click", function() {
   var current = document.getElementsByClassName("active-btn");
   current[0].className = current[0].className.replace(" active-btn", "");
   this.className += " active-btn";
-});
+  results(this.id);
+ });
 }
 </script>
 
