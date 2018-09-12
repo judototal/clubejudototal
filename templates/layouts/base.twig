@@ -109,43 +109,5 @@
     </div>
   </div>
 </div>
-
-<script>
-
-function results(i) {
-  if (i == 1) {
-    document.getElementById('provas-zonais').style.display='block';
-    document.getElementById('provas-nacionais').style.display='none';
-    document.getElementById('provas-internacionais').style.display='none';
-  }
-
-  else if (i == 2) {
-    document.getElementById('provas-zonais').style.display='none';
-    document.getElementById('provas-nacionais').style.display='block';
-    document.getElementById('provas-internacionais').style.display='none';
-  }
-
-  else if (i == 3) {
-    document.getElementById('provas-zonais').style.display='none';
-    document.getElementById('provas-nacionais').style.display='none';
-    document.getElementById('provas-internacionais').style.display='block';
-  }
-}
-
-document.getElementById('provas-zonais').style.display='block';
-document.getElementById('provas-nacionais').style.display='none';
-document.getElementById('provas-internacionais').style.display='none';
-var header = document.getElementById("btn-group");
-var btns = header.getElementsByClassName("btn");
-for (var j = 0; j < btns.length; j++) {
-btns[j].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active-btn");
-  current[0].className = current[0].className.replace(" active-btn", "");
-  this.className += " active-btn";
-  results(this.id);
- });
-}
-</script>
-
 </body>
 </html>

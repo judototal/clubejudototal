@@ -1,0 +1,38 @@
+{% extends "../layouts/base.twig" %}                                                                                                                                                                                                                                                                       
+{% block content %}
+<link rel="stylesheet" type="text/css" href="/js/lib/fancybox/jquery.fancybox.css">
+    <div class="page-header">
+            <h1>Fotos</h1>
+    </div>
+    
+	{% for gallery in galleries %}
+         <h2>{{gallery.name}}</h2> <br/>
+	 <small class="text-muted">{{gallery._.publishedDate.format('YYYY-MM-DD')}}</small>
+         
+          <div class="row">
+           {% for image in gallery.images %}
+            <div class="col-xs-4 col-sm-3 col-md-2" style="margin-bottom: 30px;">
+               <a class="gallery-image" href="{{image.url}}" title="{{gallery.name}} image {{loop.index}}" rel="{{gallery.key}}">
+                  <img class="img-thumbnail" src="{{image.url}}" alt="{{gallery.name}} image {{loop.index}}">
+               </a>
+            </div>
+	   {% endfor %}
+          </div>
+          <hr/>
+       {% endfor %}
+    
+<script src="/js/lib/fancybox/jquery.fancybox.pack.js"></script>
+<script>
+   jQuery(function($) {
+	$('.gallery-image').fancybox({
+		prevEffect: 'none',
+		nextEffect: 'none',
+		closeBtn: false,
+		helpers: {
+			titl: {},
+			buttons: {}
+		}
+	});
+   });
+</script>
+{% endblock %}

@@ -6,7 +6,9 @@ var path = require('path');
 var Seccao = new keystone.List('Seccao', {
   map: {name:'titulo'}, 	
   autokey: { path: 'slug', from: 'titulo', unique: true },
-  defaultSort: '-criadoEm',
+	defaultSort: '-criadoEm',
+	singular:'Seccao',
+	plural:'Seccoes'
 });
 
 // Adding the option to add an image to our Noticia from 
