@@ -11,21 +11,6 @@ var Seccao = new keystone.List('Seccao', {
 	plural:'Seccoes'
 });
 
-// Adding the option to add an image to our Noticia from 
-var seccaoImgStorage = new keystone.Storage({
-  adapter: keystone.Storage.Adapters.FS,
-  fs: {
-     // required; path where the files should be stored
-    path: keystone.expandPath('public/images'),
-    generateFilename: function (file, index) {
-      return file.originalname;
-    },
-    whenExists: 'error',
-     // path where files will be served
-    publicPath: 'public/images',
-  },
-});
-
 // Finally we are gonna add the fields for our Recipe
 Seccao.add({
   titulo: { 
@@ -43,11 +28,7 @@ Seccao.add({
     type: Date, 
     default: Date.now },
   publicadoEm: Date,
-  imagem: {
-    type: Types.File,
-    storage: seccaoImgStorage,
-    mimetype: '.jpeg, .jpg, .gif, .svg',
-  },
+  imagem: { type: Types.CloudinaryImage },
   textoSeccao: { 
     type: Types.Html, 
     wysiwyg: true, 

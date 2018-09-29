@@ -9,21 +9,6 @@ var Evento = new keystone.List('Evento', {
   defaultSort: '-criadoEm',
 });
 
-// Adding the option to add an image to our Noticia from 
-var eventoImgStorage = new keystone.Storage({
-  adapter: keystone.Storage.Adapters.FS,
-  fs: {
-     // required; path where the files should be stored
-    path: keystone.expandPath('server/public/img'),
-    generateFilename: function (file, index) {
-      return file.originalname;
-    },
-    whenExists: 'error',
-     // path where files will be served
-    publicPath: '/public/img',
-  },
-});
-
 // Finally we are gonna add the fields for our Recipe
 Evento.add({
   titulo: { 
@@ -41,11 +26,7 @@ Evento.add({
     type: Date, 
     default: Date.now },
   publicadoEm: Date,
-  imagem: {
-    type: Types.File,
-    storage: eventoImgStorage,
-    mimetype: '.jpeg, .jpg, .gif, .svg',
-  },
+  imagem: { type: Types.CloudinaryImage },
   dataEvento: { 
     type: Date, 
     default: Date.now },

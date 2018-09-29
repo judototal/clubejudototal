@@ -9,21 +9,6 @@ var Noticia = new keystone.List('Noticia', {
   defaultSort: '-criadoEm',
 });
 
-// Adding the option to add an image to our Noticia from 
-var noticiaImgStorage = new keystone.Storage({
-  adapter: keystone.Storage.Adapters.FS,
-  fs: {
-     // required; path where the files should be stored
-    path: keystone.expandPath('public/images'),
-    generateFilename: function (file, index) {
-      return file.originalname;
-    },
-    whenExists: 'error',
-     // path where files will be served
-    publicPath: 'public/images',
-  },
-});
-
 // Finally we are gonna add the fields for our Recipe
 Noticia.add({
   titulo: { 
@@ -41,11 +26,7 @@ Noticia.add({
     type: Date, 
     default: Date.now },
   publicadoEm: Date,
-  imagem: {
-    type: Types.File,
-    storage: noticiaImgStorage,
-    mimetype: '.jpeg, .jpg, .gif, .svg, .png',
-  },
+  imagem: { type: Types.CloudinaryImage },
   textoNoticia: { 
     type: Types.Html, 
     wysiwyg: true, 
