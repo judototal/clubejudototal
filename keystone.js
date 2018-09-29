@@ -13,7 +13,7 @@ var Twig = require('twig');
 keystone.init({
 	'name': 'cjt',
 	'brand': 'cjt',
-
+	'cloudinary config': 'cloudinary://176948449596524:wybWDMnZejgqJpsLu1CDMqomatY@de360zoli',
 	'less': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
@@ -75,7 +75,6 @@ if (process.env.OPENSHIFT_NODEJS_IP) {
 if (process.env.OPENSHIFT_NODEJS_PORT) {
   keystone.set('port', process.env.OPENSHIFT_NODEJS_PORT);
 }
-
 
 
 keystone.start();
