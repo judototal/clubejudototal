@@ -66,5 +66,16 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	+ '\nset up your mailgun integration');
 }
 
+if (process.env.OPENSHIFT_MONGODB_DB_URL) {
+    keystone.set('mongo', process.env.OPENSHIFT_MONGODB_DB_URL);
+}
+if (process.env.OPENSHIFT_NODEJS_IP) {
+  keystone.set('host', process.env.OPENSHIFT_NODEJS_IP);
+}
+if (process.env.OPENSHIFT_NODEJS_PORT) {
+  keystone.set('port', process.env.OPENSHIFT_NODEJS_PORT);
+}
+
+
 
 keystone.start();
