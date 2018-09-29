@@ -65,10 +65,11 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	+ '\n\nCreate a mailgun account and add the credentials to the .env file to'
 	+ '\nset up your mailgun integration');
 }
-
+/** 
 if (process.env.OPENSHIFT_MONGODB_DB_URL) {
     keystone.set('mongo', process.env.OPENSHIFT_MONGODB_DB_URL);
 }
+*/
 if (process.env.OPENSHIFT_NODEJS_IP) {
   keystone.set('host', process.env.OPENSHIFT_NODEJS_IP);
 }
