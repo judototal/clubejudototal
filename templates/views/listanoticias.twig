@@ -8,8 +8,7 @@
   {% if noticia.estado == 'publicada' %}
    {% if loop.first %}
       <h1>{{noticia.titulo}}</h1></span>
-      {% if noticia.imagem.filename %}
-      
+      {% if noticia.imagem.url %}
          <img src="{{noticia.imagem.url}}" alt="{{noticia.imagem.originalname}}" style="max-width:100%">
       {% endif %}
           <p>

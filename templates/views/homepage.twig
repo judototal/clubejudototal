@@ -7,15 +7,15 @@
       <div class="d-flex">
       <div class="news-grid">
         <a href="/noticia/{{noticias[0].slug}}" class="cell1">
-          <img src="/images/{{noticias[0].imagem.filename}}">
+          <img src="{{noticias[0].imagem.url}}" alt="{{noticias[0].imagem.originalname}}">
           <div id="main-cell" class="headline">{{noticias[0].titulo}}</div>
         </a>
         <a href="/noticia/{{noticias[1].slug}}" class="cell2">
-          <img src="/images/{{noticias[1].imagem.filename}}">
+          <img src="{{noticias[1].imagem.url}}" alt="{{noticias[1].imagem.originalname}}">
           <div id="second-cell" class="headline">{{noticias[1].titulo}}</div>
         </a>
         <a href="/noticia/{{noticias[2].slug}}" class="cell2">
-          <img src="/images/{{noticias[2].imagem.filename}}">
+          <img src="{{noticias[2].imagem.url}}" alt="{{noticias[2].imagem.originalname}}">
           <div id="second-cell" class="headline">{{noticias[2].titulo}}</div>
         </a>
       </div>
@@ -69,7 +69,7 @@
       <div class="jm">
         <h3>Judoca do mês:</h3>
         <h5>{{atletames[0].nome}}</h5>
-        <img src="images/{{atletames[0].imagem.filename}}">
+        <img src="{{atletames[0].imagem.url}}" alt="{{atletames[0].imagem.originalname}}">
         <ul>
           <li>{{atletames[0].textoDescritivo}}</li>
         </ul>
