@@ -31,6 +31,9 @@ AtletaMes.add({
     wysiwyg: true, 
     height: 600 
   },
+  descricaoImagem: { 
+    type: String, 
+    required: false },
   imagem: { type: Types.CloudinaryImage }
 });
 

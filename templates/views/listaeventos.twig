@@ -8,8 +8,8 @@
   {% if evento.estado == 'publicada' %}
    {% if data.dataactual < evento.dataEvento %}
       <h1>{{evento.titulo}}</h1></span>
-      {% if evento.imagem.filename %}
-         <img src="/images/{{evento.imagem.filename}}" style="max-width:100%">
+      {% if evento.imagem.url %}
+         <img src="{{evento.imagem.url}}" alt="{{evento.descricaoImagem}}" style="max-width:100%">
       {% endif %}
       	  <p>Local do Evento: {{evento.localizacaoEvento}}</p>
 	  <p>Data do Evento: {{evento._.dataEvento.format('YYYY-MM-DD')}}</p>
@@ -32,8 +32,8 @@
   {% if evento.estado == 'publicada' %}
    {% if data.dataactual >= evento.dataEvento %}
       <div class="news-small">
-      {% if evento.imagem.filename %}
-         <img src="/images/{{evento.imagem.filename}}" style="max-width:100%">
+      {% if evento.imagem.url %}
+         <img src="{{evento.imagem.url}}" alt="{{evento.descricaoImagem}}" style="max-width:100%">
       {% endif %}
         <span>{{evento._.dataEvento.format('YYYY-MM-DD H:m')}}<br>
 	<span>{{evento.localizacaoEvento}}</span><br>

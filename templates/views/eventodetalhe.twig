@@ -6,8 +6,8 @@
     <div class="main">
   {% if evento.estado == 'publicada' %}
       <h1>{{evento.titulo}}</h1></span>
-      {% if evento.imagem.filename %}
-         <img src="/images/{{evento.imagem.filename}}" style="max-width:100%">
+      {% if evento.imagem.url %}
+         <img src="{{evento.imagem.url}}" alt="{{evento.descricaoImagem}}" style="max-width:100%">
       {% endif %}
       	  <p>Local do Evento: {{evento.localizacaoEvento}}</p>
           {% if evento.atletasPresentes %}

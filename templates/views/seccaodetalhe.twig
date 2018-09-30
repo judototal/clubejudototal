@@ -7,8 +7,8 @@
   {% if seccao.estado == 'publicada' %}
    
       <h1>{{seccao.titulo}}</h1></span>
-      {% if seccao.imagem.filename %}
-         <img src="/images/{{seccao.imagem.filename}}" style="max-width:100%">
+      {% if seccao.imagem.url %}
+         <img src="{{seccao.imagem.url}}" alt="{{seccao.descricaoImagem}}" style="max-width:100%">
       {% endif %}
           <p>
             {{seccao.textoSeccao}}

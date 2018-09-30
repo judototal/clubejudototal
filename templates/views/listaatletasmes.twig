@@ -9,8 +9,8 @@
   {% if atleta.estado == 'publicada' %}
    {% if loop.first %}
       <h1>{{atleta.nome}}</h1></span>
-      {% if atleta.imagem.filename %}
-         <img src="/images/{{atleta.imagem.filename}}" style="max-width:100%">
+      {% if atleta.imagem.url %}
+         <img src="{{atleta.imagem.url}}" alt="{{atleta.descricaoImagem}}" style="max-width:100%">
       {% endif %}
           <p>
             {{atleta.textoDescritivo}}
@@ -27,7 +27,7 @@
   {% if atleta.estado == 'publicada' %}
    {% if not loop.first %}
       <div class="news-small">
-        <img src="/images/{{atleta.imagem.filename}}" style="max-width:100%">
+        <img src="{{atleta.imagem.url}}" alt="{{atleta.descricaoImagem}}" style="max-width:100%">
         <span>{{atleta._.publicadoEm.format('YYYY-MM-DD H:m')}}<br> <br>
         <a href="/atletames/{{atleta.slug}}">{{atleta.nome}}</a></span>
       </div>

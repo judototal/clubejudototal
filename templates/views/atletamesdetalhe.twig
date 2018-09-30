@@ -9,7 +9,7 @@
    {% if data.slug == atleta.slug %}
       <h1>{{atleta.nome}}</h1></span>
       {% if atleta.imagem.filename %}
-         <img src="/images/{{atleta.imagem.filename}}" style="max-width:100%">
+         <img src="{{atleta.imagem.url}}" alt="{{atleta.descricaoImagem}}" style="max-width:100%">
       {% endif %}
           <p>
             {{atleta.textoDescritivo}}
@@ -26,7 +26,7 @@
   {% if atleta.estado == 'publicada' %}
    {% if data.slug != atleta.slug %}
       <div class="news-small">
-        <img src="/images/{{atleta.imagem.filename}}" style="max-width:100%">
+        <img src="{{atleta.imagem.url}}" alt="{{atleta.descricaoImagem}}" style="max-width:100%">
         <span>{{atleta._.publicadoEm.format('YYYY-MM-DD H:m')}}<br> <br>
         <a href="{{atleta.slug}}">{{atleta.nome}}</a></span>
       </div>
