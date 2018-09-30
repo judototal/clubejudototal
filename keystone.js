@@ -22,13 +22,13 @@ keystone.init({
     'port':8080,
 	'twig options': { method: 'fs' },
 	'custom engine': Twig.render,
-
 	'emails': 'templates/emails',
-
 	'auto update': true,
 	'session': true,
 	'auth': true,
 	'user model': 'Utilizador',
+	'logger': ':method :url :status :res[content-length] - :response-time ms',
+	'compress':true
 });
 
 // Load your project's Models
