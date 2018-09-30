@@ -26,12 +26,12 @@ AtletaMes.add({
     type: Date, 
     default: Date.now },
   publicadoEm: Date,
-  imagem: { type: Types.CloudinaryImage },
   textoDescritivo: { 
     type: Types.Html, 
     wysiwyg: true, 
     height: 600 
-  }
+  },
+  imagem: { type: Types.CloudinaryImage }
 });
 
 // Setting the default order of the columns on the admin tab

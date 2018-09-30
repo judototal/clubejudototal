@@ -26,20 +26,24 @@ Evento.add({
     type: Date, 
     default: Date.now },
   publicadoEm: Date,
-  imagem: { type: Types.CloudinaryImage },
   dataEvento: { 
     type: Date, 
     default: Date.now },
   publicadoEm: Date,
+  localizacaoEvento: { 
+    type: String, 
+    required: false 
+  },
+  atletasPresentes: { 
+    type: String, 
+    required: false 
+  },
   descricaoEvento: { 
     type: Types.Html, 
     wysiwyg: true, 
     height: 600 
   },
-  localizacaoEvento: { 
-    type: String, 
-    required: false 
-  }
+  imagem: { type: Types.CloudinaryImage }
 });
 
 // Setting the default order of the columns on the admin tab

@@ -21,7 +21,7 @@ exports = module.exports = function (req, res) {
 	var Seccao = keystone.list('Seccao');
 
 	view.query('noticias', Noticias.model.find({estado:'publicada'}).sort('-publicadoEm').limit(3));
-	view.query('eventos', Eventos.model.find().sort('-publicadoEm').limit(10));
+	view.query('eventos', Eventos.model.find().sort('-dataEvento').limit(10));
 	view.query('atletames', AtletaMes.model.find().sort('-publicadoEm').limit(1));
 	view.query('resultados', Seccao.model.findOne({slug:'resultados'}));
 	view.query('contactos', Seccao.model.findOne({slug:'contactos'}));

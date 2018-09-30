@@ -10,6 +10,9 @@
          <img src="/images/{{evento.imagem.filename}}" style="max-width:100%">
       {% endif %}
       	  <p>Local do Evento: {{evento.localizacaoEvento}}</p>
+          {% if evento.atletasPresentes %}
+             <p>Atletas Presentes: {{evento.atletasPresentes}}</p>
+          {% endif %}
 	  <p>Data do Evento: {{evento._.dataEvento.format('YYYY-MM-DD')}}</p>
 	  <p>Hora do Evento: {{evento._.dataEvento.format('H:m')}} horas</p>
       	  <p>
