@@ -9,7 +9,8 @@
    {% if loop.first %}
       <h1>{{noticia.titulo}}</h1></span>
       {% if noticia.imagem.filename %}
-         <img src="/images/{{noticia.imagem.filename}}" style="max-width:100%">
+      
+         <img src="{{noticia.imagem.url}}" alt="{{noticia.imagem.originalname}}" style="max-width:100%">
       {% endif %}
           <p>
             {{noticia.textoNoticia}}
@@ -26,7 +27,7 @@
   {% if noticia.estado == 'publicada' %}
    {% if not loop.first %}
       <div class="news-small">
-        <img src="/images/{{noticia.imagem.filename}}" style="max-width:100%">
+        <img src="{{noticia.imagem.url}}" alt="{{noticia.imagem.originalname}}" style="max-width:100%">
         <span>{{noticia._.publicadoEm.format('YYYY-MM-DD H:m')}}<br> <br>
         <a href="/noticia/{{noticia.slug}}">{{noticia.titulo}}</a></span>
       </div>
