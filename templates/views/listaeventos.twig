@@ -11,22 +11,23 @@
       {% if evento.imagem.url %}
          <img src="{{evento.imagem.url}}" alt="{{evento.descricaoImagem}}" style="max-width:100%">
       {% endif %}
-    <table>
-    <tr>
-      <td>Local do Evento:</td><td>{{evento.localizacaoEvento}}</td>
-    </tr>
-    <tr>
-	    <td>Data do Evento:</td><td>{{evento._.dataEvento.format('YYYY-MM-DD')}}</td>
-    </tr>
-    <tr>
-	    <td>Hora do Evento:</td><td>{{evento._.dataEvento.format('H:m')}} horas</td>
-    </tr>
-    <tr>
-	   <td>Local do Evento:</td><td>{{evento.localizacaoEvento}}</td>
-    </tr>	   
-	  <p>
-      {{evento.descricaoEvento}}
-    </p>
+    <table class="tabevent">
+      <tr>
+        <td><strong>Local do Evento:</strong></td><td>{{evento.localizacaoEvento}}</td>
+      </tr>
+      <tr>
+        <td><strong>Data do Evento:</strong></td><td>{{evento._.dataEvento.format('YYYY-MM-DD')}}</td>
+      </tr>
+      <tr>
+        <td><strong>Hora do Evento:</strong></td><td>{{evento._.dataEvento.format('H:m')}} horas</td>
+      </tr>
+      <tr>
+      <td><strong>Local do Evento:</strong></td><td>{{evento.localizacaoEvento}}</td>
+      </tr>	 
+      <tr>
+        <td colspan="2">{{evento.descricaoEvento}}</td>
+      </tr>  
+    </table>
 	  <br><span>{{evento._.publicadoEm.format('YYYY-MM-DD H:m')}}<br>
 	  <hr>
    {% endif %}
