@@ -11,14 +11,22 @@
       {% if evento.imagem.url %}
          <img src="{{evento.imagem.url}}" alt="{{evento.descricaoImagem}}" style="max-width:100%">
       {% endif %}
-      	  <p>Local do Evento: {{evento.localizacaoEvento}}</p>
-	  <p>Data do Evento: {{evento._.dataEvento.format('YYYY-MM-DD')}}</p>
-	  <p>Hora do Evento: {{evento._.dataEvento.format('H:m')}} horas</p>
-	  <p>Local do Evento: {{evento.localizacaoEvento}}</p>
-	  <p/>	   
+    <table>
+    <tr>
+      <td>Local do Evento:</td><td>{{evento.localizacaoEvento}}</td>
+    </tr>
+    <tr>
+	    <td>Data do Evento:</td><td>{{evento._.dataEvento.format('YYYY-MM-DD')}}</td>
+    </tr>
+    <tr>
+	    <td>Hora do Evento:</td><td>{{evento._.dataEvento.format('H:m')}} horas</td>
+    </tr>
+    <tr>
+	   <td>Local do Evento:</td><td>{{evento.localizacaoEvento}}</td>
+    </tr>	   
 	  <p>
-            {{evento.descricaoEvento}}
-          </p>
+      {{evento.descricaoEvento}}
+    </p>
 	  <br><span>{{evento._.publicadoEm.format('YYYY-MM-DD H:m')}}<br>
 	  <hr>
    {% endif %}
