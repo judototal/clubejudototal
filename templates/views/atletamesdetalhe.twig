@@ -8,7 +8,7 @@
   {% if atleta.estado == 'publicada' %}
    {% if data.slug == atleta.slug %}
       <h1>{{atleta.nome}}</h1></span>
-      {% if atleta.imagem.filename %}
+      {% if atleta.imagem.url %}
          <img src="{{atleta.imagem.url}}" alt="{{atleta.descricaoImagem}}" style="max-width:100%">
       {% endif %}
           <p>
