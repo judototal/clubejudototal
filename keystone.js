@@ -19,7 +19,6 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'twig',
-    'port':8080,
 	'twig options': { method: 'fs' },
 	'custom engine': Twig.render,
 	'emails': 'templates/emails',
