@@ -33,7 +33,7 @@
 }
 
 .main p::first-letter {
-  font-size: 300%;
+  initial-letter: 2;
   color: #cd171e;
 }
 
