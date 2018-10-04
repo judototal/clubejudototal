@@ -9,15 +9,23 @@
       {% if evento.imagem.url %}
          <img src="{{evento.imagem.url}}" alt="{{evento.descricaoImagem}}" style="max-width:100%">
       {% endif %}
-      	  <p>Local do Evento: {{evento.localizacaoEvento}}</p>
-          {% if evento.atletasPresentes %}
-             <p>Atletas Presentes: {{evento.atletasPresentes}}</p>
-          {% endif %}
-	  <p>Data do Evento: {{evento._.dataEvento.format('YYYY-MM-DD')}}</p>
-	  <p>Hora do Evento: {{evento._.dataEvento.format('H:m')}} horas</p>
-      	  <p>
-            {{evento.descricaoEvento}}
-          </p>
+      	     <table class="tabevent">
+      <tr>
+        <td><strong>Local do Evento:</strong></td><td>{{evento.localizacaoEvento}}</td>
+      </tr>
+      <tr>
+        <td><strong>Data do Evento:</strong></td><td>{{evento._.dataEvento.format('YYYY-MM-DD')}}</td>
+      </tr>
+      <tr>
+        <td><strong>Hora do Evento:</strong></td><td>{{evento._.dataEvento.format('H:m')}} horas</td>
+      </tr>
+      <tr>
+      <td><strong>Local do Evento:</strong></td><td>{{evento.localizacaoEvento}}</td>
+      </tr>	 
+      <tr>
+        <td colspan="2"><p>{{evento.descricaoEvento}}</p></td>
+      </tr>  
+    </table>
 	  <br><span>{{evento._.publicadoEm.format('YYYY-MM-DD H:m')}}<br>
 	  <hr>
 	  <p>
