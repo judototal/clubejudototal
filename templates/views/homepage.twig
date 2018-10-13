@@ -103,8 +103,8 @@ function results(i) {
 document.getElementById('provas-zonais').style.display='none';
 document.getElementById('provas-nacionais').style.display='block';
 document.getElementById('provas-internacionais').style.display='none';
-var header = document.getElementById("btn-group");
-var btns = header.getElementsByClassName("btn");
+var navbar = document.getElementById("navbar-nav");
+var btns = navbar.getElementsByClassName("btn");
 for (var j = 0; j < btns.length; j++) {
 btns[j].addEventListener("click", function() {
   var current = document.getElementsByClassName("active-btn");
