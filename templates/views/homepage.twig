@@ -26,7 +26,7 @@
             <tr>
               <th>Últimos eventos</th>
             </tr>
-	    {% for evento in eventos %}
+	    {% for evento in eventos_passados %}
 	       {% if data.dataactual>=evento.dataEvento %}
 	       	   <tr>
 			<td>{{evento._.dataEvento.format('DD/MM/YYYY H:m')}}, {{evento.localizacaoEvento}}<br>
@@ -46,7 +46,7 @@
             <tr>
               <th>Próximos eventos</th>
             </tr>
-            {% for evento in eventos %}
+            {% for evento in eventos_futuros %}
 	       {% if data.dataactual < evento.dataEvento %}
 	       	   <tr>
 			<td>{{evento._.dataEvento.format('DD/MM/YYYY H:m')}}, {{evento.localizacaoEvento}}<br>
