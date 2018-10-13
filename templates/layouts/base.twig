@@ -119,6 +119,16 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-126896101-1');
+
+    //Highlight opcao menu
+    var btns_menu = header.getElementsByClassName("nav-item");
+    for (var j = 0; j < btns_menu.length; j++) {
+      btns_menu[j].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+    });
+    }
   </script>
 </body>
 </html>
