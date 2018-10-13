@@ -29,7 +29,7 @@
 	    {% for evento in eventos_passados %}
 	       {% if data.dataactual>=evento.dataEvento %}
 	       	   <tr>
-			<td>{{evento._.dataEvento.format('DD/MM/YYYY H:m')}}, {{evento.localizacaoEvento}}<br>
+			<td>{{evento._.dataEvento.format('DD/MM/YYYY HH:mm')}}, {{evento.localizacaoEvento}}<br>
               	        <a href="/evento/{{evento.slug}}">{{evento.titulo}}</a></td>
             	   </tr>
 	       {% endif %}
@@ -49,7 +49,7 @@
             {% for evento in eventos_futuros %}
 	       {% if data.dataactual < evento.dataEvento %}
 	       	   <tr>
-			<td>{{evento._.dataEvento.format('DD/MM/YYYY H:m')}}, {{evento.localizacaoEvento}}<br>
+			<td>{{evento._.dataEvento.format('DD/MM/YYYY HH:mm')}}, {{evento.localizacaoEvento}}<br>
               	        <a href="/evento/{{evento.slug}}">{{evento.titulo}}</a></td>
             	   </tr>
 	       {% endif %}
