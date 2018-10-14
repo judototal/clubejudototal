@@ -21,8 +21,8 @@ exports = module.exports = function (req, res) {
 	var Seccao = keystone.list('Seccao');
 
 	view.query('noticias', Noticias.model.find({estado:'publicada'}).sort('-publicadoEm').limit(3));
-	view.query('eventos_passados', Eventos.model.find({dataEvento: {$lt:locals.data.dataactual}}).sort('-dataEvento').limit(10));
-	view.query('eventos_futuros', Eventos.model.find({dataEvento: {$gt:locals.data.dataactual}}).sort('dataEvento').limit(10));
+	view.query('eventos_passados', Eventos.model.find({dataEvento: {$lt:locals.data.dataactual}}).sort('-dataEvento').limit(5));
+	view.query('eventos_futuros', Eventos.model.find({dataEvento: {$gt:locals.data.dataactual}}).sort('dataEvento').limit(5));
 	view.query('atletames', AtletaMes.model.find().sort('-publicadoEm').limit(1));
 	view.query('resultados', Seccao.model.findOne({slug:'resultados'}));
 	view.query('contactos', Seccao.model.findOne({slug:'contactos'}));
