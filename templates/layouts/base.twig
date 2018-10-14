@@ -121,16 +121,10 @@
     gtag('config', 'UA-126896101-1');
 
     //Highlight opcao menu
-    var naveg = document.getElementById("collapsibleNavbar");
-    var btns_menu = naveg.getElementsByName("li");
-    for (var j = 0; j < btns_menu.length; j++) {
-      btns_menu[j].addEventListener("click", function() {
-        console.log("fui clicado");
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace("active", "");
-        this.className += " active";
-      });
-    }
+    $(".nav li").on("click", function() {
+      $(".nav li").removeClass("active");
+      $(this).addClass("active");
+    });
   </script>
 </body>
 </html>
