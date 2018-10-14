@@ -122,7 +122,7 @@
 
     //Highlight opcao menu
     var naveg = document.getElementById("collapsibleNavbar");
-    var btns_menu = naveg.getElementsByClassName("nav-link");
+    var btns_menu = naveg.getElementsByName("li");
     for (var j = 0; j < btns_menu.length; j++) {
       btns_menu[j].addEventListener("click", function() {
         console.log("fui clicado");
